@@ -1,14 +1,48 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Ionic Calculator
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="has-header">
+    <div id="keypad">
+        <form id="calculator-form1" class="display">
+            <ion-label></ion-label>
+            <ion-input type="text" placeholder="0" id="displayPanel" name="display" [(ngModel)]="result"></ion-input>
+        </form>
+
+        <div class="horizontal">
+            <button id="calculator-button10" class="key" ion-button (click)="calculate('7')"> 7 </button>
+            <button id="calculator-button11" class="key" ion-button (click)="calculate('8')"> 8 </button>
+            <button id="calculator-button12" class="key" ion-button (click)="calculate('9')"> 9 </button>
+            <button id="calculator-button3" class="key operation-key" ion-button (click)="calculate('/')"> / </button>
+        </div>
+
+        <div class="horizontal">
+            <button id="calculator-button14" class="key" color="num_key" ion-button (click)="calculate('4')"> 4 </button>
+            <button id="calculator-button15" class="key" color="num_key" ion-button (click)="calculate('5')"> 5 </button>
+            <button id="calculator-button16" class="key" color="num_key" ion-button (click)="calculate('6')"> 6 </button>
+            <button id="calculator-button13" class="key operation-key" ion-button (click)="calculate('*')"> * </button>
+        </div>
+
+        <div class="horizontal">
+            <button id="calculator-button18" class="key" ion-button (click)="calculate('1')"> 1 </button>
+            <button id="calculator-button19" class="key" ion-button (click)="calculate('2')"> 2 </button>
+            <button id="calculator-button20" class="key" ion-button (click)="calculate('3')"> 3 </button>
+            <button id="calculator-button17" class="key operation-key" ion-button (click)="calculate('-')"> - </button>
+        </div>
+
+        <div class="horizontal">
+            <button id="calculator-button22" class="key" ion-button (click)="calculate('0')"> 0 </button>
+            <button id="calculator-button23" class="key" ion-button (click)="calculate('.')"> . </button>
+            <button id="calculator-button1" ion-button class="key control-key" (click)="calculate('C')"> C </button>
+            <button id="calculator-button21" ion-button class="key operation-key" (click)="calculate('+')"> + </button>
+        </div>
+
+        <div class="horizontal">
+            <button id="calculator-button25" ion-button class="key control-key full-wide" (click)="calculate('=')"> = </button>
+        </div>
+    </div>
 </ion-content>
